@@ -8,11 +8,17 @@ Author URI: http://www.foxybay.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically opens a new tab for external links. 
+Automatically parses links inside of content and forces a new window for external links. 
 
 == Description ==
 
 WP Links is external link handler to help with your on page SEO and increases your visitors time on site. 
+
+One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website.
+
+This plugin is intended to increase the time a user spends on your page by assisting you in HTML markup.
+
+WP Links will scan your page for any external links and force links to open in a new tab.
 
 **How does it work?**
 
