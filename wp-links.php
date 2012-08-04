@@ -57,7 +57,7 @@ function WPLINKS_settings_page() { ?>
                                       <a href="https://twitter.com/IMJacobKing" class="twitter-follow-button" data-show-count="false">Follow @IMJacobKing</a>
                                       <p>Make sure to check out <a href="http://www.jacobking.com" target="_blank">JacobKing.com</a> for the latest in SEO.</p>
                                       <p><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')">
-                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"></p>
+                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></p>
                                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                                 </div>
                         </div>
