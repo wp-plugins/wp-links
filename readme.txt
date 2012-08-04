@@ -2,7 +2,7 @@
 Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, seo, target, _blank
 Requires at least: 3.0
-Tested up to: 3.3.2
+Tested up to: 3.4.1
 Stable tag: 1.0
 Author URI: http://www.foxybay.com
 License: GPLv2 or later
