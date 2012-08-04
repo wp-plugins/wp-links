@@ -57,7 +57,7 @@ function WPLINKS_settings_page() { ?>
                                       <a href="https://twitter.com/IMJacobKing" class="twitter-follow-button" data-show-count="false">Follow @IMJacobKing</a>
                                       <p>Make sure to check out <a href="http://www.jacobking.com" target="_blank">JacobKing.com</a> for the latest in SEO.</p>
                                       <p><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')">
-                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></p>
+                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"></p>
                                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                                 </div>
                         </div>
@@ -138,12 +138,7 @@ function WPLINKS_parse_copy($text) {
 	$text = preg_replace_callback($pattern,'WPLINKS_parse_matches',$text);	 
 	return $text;
 }
-  function WPLINKS__admin_notice(){
-    echo '<br /><div class="updated">
-       <p>All external links open a new window when clicked.</p>
-    </div>';
-}
-add_action('admin_notices', 'WPLINKS__admin_notice');
+
 
 add_filter('the_content', 'WPLINKS_parse_copy', 999);
 if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 999);
