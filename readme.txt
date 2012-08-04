@@ -23,6 +23,8 @@ WP Links will scan your page for any external links and force links to open in a
 **How does it work?**
 
 The plugin simply parses all links on your page on output and adds target="_blank" to the anchor tag.
+
+Additional options are available in the options page. 
  
 == Installation ==
 
