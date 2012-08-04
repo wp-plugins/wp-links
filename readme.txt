@@ -8,11 +8,11 @@ Author URI: http://www.foxybay.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically parses links inside of content and forces a new window to be opened for external links. 
+SEO friendly plugin that automatically parses links in content and forces a new window to be opened for external links. 
 
 == Description ==
 
-WP Links is external link handler to help with your on page SEO and increases your visitors time on site. 
+WP Links is a SEO friendly external link handler to help with your on page SEO and increases your visitors time on site. 
 
 One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website.
 
