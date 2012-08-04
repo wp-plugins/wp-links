@@ -35,4 +35,4 @@ Additional options are available in the options page.
 == Changelog ==
 
 = 1.0 =
-First release 
+First release of the plugin. 
