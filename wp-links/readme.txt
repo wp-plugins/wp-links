@@ -8,7 +8,7 @@ Author URI: http://www.foxybay.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically parses links inside of content and forces a new window for external links. 
+Automatically parses links inside of content and forces a new window to be opened for external links. 
 
 == Description ==
 
