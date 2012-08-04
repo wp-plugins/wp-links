@@ -1,6 +1,6 @@
 === WP Links ===
 Contributors: nasium
-Tags: external, links, new tab, new window, nofollow, rel, seo, target, _blank
+Tags: seo, external, links, new tab, new window, nofollow, rel, seo, target, _blank
 Requires at least: 3.0
 Tested up to: 3.3.2
 Stable tag: 1.0
@@ -8,11 +8,11 @@ Author URI: http://www.foxybay.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically parses links inside of content and forces a new window to be opened for external links. 
+SEO friendly plugin that automatically parses links in content and forces a new window to be opened for external links. 
 
 == Description ==
 
-WP Links is external link handler to help with your on page SEO and increases your visitors time on site. 
+WP Links is a SEO friendly external link handler to help with your on page SEO and increases your visitors time on site. 
 
 One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website.
 
@@ -23,6 +23,8 @@ WP Links will scan your page for any external links and force links to open in a
 **How does it work?**
 
 The plugin simply parses all links on your page on output and adds target="_blank" to the anchor tag.
+
+Additional options are available in the options page. 
  
 == Installation ==
 
@@ -33,4 +35,4 @@ The plugin simply parses all links on your page on output and adds target="_blan
 == Changelog ==
 
 = 1.0 =
-First release 
+First release of the plugin. 
