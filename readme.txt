@@ -8,7 +8,7 @@ Author URI: http://www.foxybay.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Open extenal links in a new tab.
+SEO plugin that forces external links to open in a new tab, increasing the time a user spends on your page.
 
 == Description ==
 
