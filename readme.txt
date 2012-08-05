@@ -8,7 +8,7 @@ Author URI: http://www.foxybay.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SEO friendly plugin that automatically parses links in content and forces a new window to be opened for external links. 
+SEO plugin that forces external links to open in a new tab, increasing the time a user spends on your page.
 
 == Description ==
 
