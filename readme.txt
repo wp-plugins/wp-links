@@ -1,6 +1,6 @@
 === WP Links ===
 Contributors: nasium
-Tags: seo, external, links, new tab, new window, nofollow, rel, seo, target, _blank, posts, page, custom post type
+Tags: seo, external, links, new tab, new window, nofollow, rel, seo, target, _blank, posts, page, custom post type, comments, google
 Requires at least: 3.0
 Tested up to: 3.4.1
 Stable tag: 1.0
