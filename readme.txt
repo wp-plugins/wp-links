@@ -12,17 +12,15 @@ SEO plugin that forces external links to open in a new tab, increasing the time 
 
 == Description ==
 
-WP Links is a SEO friendly external link handler to help with your on page SEO and increases your visitors time on site. 
+WP Links is a SEO friendly external link handler to improve your on page SEO and increase your visitor time spent on site. 
 
 One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website.
 
-This plugin is intended to increase the time a user spends on your page by assisting you in HTML markup.
-
-WP Links will scan your page for any external links and force links to open in a new tab.
+This plugin is intended to increase the time a user spends on your page by assisting publishers in HTML markup.
 
 **How does it work?**
 
-The plugin simply parses all links on your page on output and adds target="_blank" to the anchor tag.
+The plugin simply parses all links on your page before output and adds target="_blank" to the HTML anchor tag.
 
 Additional options are available in the options page. 
  
