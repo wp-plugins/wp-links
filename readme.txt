@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, seo, target, _blank, posts, page, custom post type, comments, google, url
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.0
+Stable tag: 1.1
 Author URI: http://www.foxybay.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,7 +20,7 @@ This plugin is intended to increase the time a user spends on your page by assis
 
 **How does it work?**
 
-The plugin simply parses all links on your page before output and adds target="_blank" to the HTML anchor tag.
+The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes. 
 
 Additional options are available in the options page. 
  
