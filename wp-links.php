@@ -67,11 +67,6 @@ function WPLINKS_parse_copy($text) {
 }
 
 
-add_filter('the_content', 'WPLINKS_parse_copy', 999);
-if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 999);
-if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_copy', 999);
-
-
 function WPLINKS_settings_page() { ?>
     <div class="wrap">
         <div id="icon-link-manager" class="icon32"></div> 
@@ -146,3 +141,9 @@ function WPLINKS_settings_page() { ?>
     </div> 
     
 <?php } ?>
+
+<?
+add_filter('the_content', 'WPLINKS_parse_copy', 423);
+if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 423);
+if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_copy', 423);
+?>
