@@ -18,13 +18,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: Automatically opens a new tab for external links.
-Version: 1.1
+Version: 1.2
 Author: Jorge A. Gonzalez
 Author URI: http://www.thebutton.com
 License: GPL2
 */
  
 add_action('admin_menu', 'WPLINKS_create_menu');
+
+add_filter('the_content', 'WPLINKS_parse_copy', 423);
+if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 423);
+if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_copy', 423);
 
 function WPLINKS_create_menu() { 
     add_options_page('WP Links Options', 'WP Links', 'manage_options', 'WPLINKS_menu', 'WPLINKS_settings_page'); 
@@ -141,9 +145,3 @@ function WPLINKS_settings_page() { ?>
     </div> 
     
 <?php } ?>
-
-<?
-add_filter('the_content', 'WPLINKS_parse_copy', 423);
-if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 423);
-if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_copy', 423);
-?>
