@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: Automatically opens a new tab for external links.
-Version: 1.2
+Version: 1.3
 Author: Jorge A. Gonzalez
 Author URI: http://www.thebutton.com
 License: GPL2
@@ -52,8 +52,6 @@ function WPLINKS_is_external($uri){
 	return $matches[0];	   
 }
 
- 
-
 function WPLINKS_parse_matches($matches){ 
 
 	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external($_SERVER["HTTP_HOST"]) ) {
@@ -69,7 +67,6 @@ function WPLINKS_parse_copy($text) {
 	$text = preg_replace_callback($pattern,'WPLINKS_parse_matches',$text);	 
 	return $text;
 }
-
 
 function WPLINKS_settings_page() { ?>
     <div class="wrap">
@@ -89,14 +86,11 @@ function WPLINKS_settings_page() { ?>
                                       <a href="https://twitter.com/IMJacobKing" class="twitter-follow-button" data-show-count="false">Follow @IMJacobKing</a>
                                       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Just installed WP Links on my #WordPress site." data-via="TheRealJAG" data-related="TheRealJAG">Tweet</a> 
                                       <p><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')">
-                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></p>
-                                      
-                                      
+                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></p>  
                                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                                 </div>
                         </div>
-                    </div>
-         
+                    </div> 
            
                     <div class="metabox-holder"> 
                         <div class="postbox gdrgrid frontleft"> 
@@ -105,12 +99,12 @@ function WPLINKS_settings_page() { ?>
                                 <div class="inside">
                                       
                                        <form method="post" action="options.php"> 
-                                            <?php 
+                                            <?php
                                             settings_fields('WPLINKS-settings'); 
                                             if( get_option("WPLINKS-nofollow") ){ $checked1 = "checked=\"checked\""; }  else { $checked1 = ""; }   
                                             if( get_option("WPLINKS-comments") ){ $checked2 = "checked=\"checked\""; }  else { $checked2 = ""; }   
                                             if( get_option("WPLINKS-excerpt") ){ $checked3 = "checked=\"checked\""; }  else { $checked3 = ""; }   
-                                            ?>  
+                                            ?>
                                             <table class="form-table">  
                                                 <tr>
                                                 <td valign="top"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
