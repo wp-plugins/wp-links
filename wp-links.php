@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: Automatically opens a new tab for external links.
-Version: 1.3
+Version: 1.4
 Author: Jorge A. Gonzalez
 Author URI: http://www.thebutton.com
 License: GPL2
@@ -55,7 +55,7 @@ function WPLINKS_is_external($uri){
 function WPLINKS_parse_matches($matches){ 
 
 	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external($_SERVER["HTTP_HOST"]) ) {
-		if (get_option("WPLINKS-nofollow")) return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' target="_blank" rel="external nofollow">' . $matches[5] . '</a>';	 
+		if (get_option("WPLINKS-nofollow")) return '<a href="' . $matches[2] . '//' . $matches[3] . '" ' . $matches[1] . $matches[4] . ' target="_blank" rel="external nofollow">' . $matches[5] . '</a>';	 
         else return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' target="_blank">' . $matches[5] . '</a>';	 
 	} else {
 		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . '>' . $matches[5] . '</a>';
@@ -79,7 +79,7 @@ function WPLINKS_settings_page() { ?>
                             <div class="gdsrclear"></div>
                                 <div class="inside">
                                       <p>WP Links was created to improve the length of time a visitor spends on your webpage.</p>
-                                      <p>This plugin will scan your page for any external links and force them to open in a new tab.</p>
+                                      <p>This plugin will scan your posts/pages for any external links and force them to open in a new tab.</p>
                                       <p>Developed and maintained by <a href="http://www.thebutton.com" target="_blank">Jorge A. Gonzalez</a> & <a href="http://www.jacobking.com" target="_blank">Jacob King</a>.</p>
                                       
                                       <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="false">Follow @TheRealJAG</a>
