@@ -8,7 +8,7 @@ Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SEO plugin that forces external links to open in a new tab, increasing the time a user spends on your page.
+SEO friendly plugin that forces external links to open in a new tab, increasing the time a user spends on your website.
 
 == Description ==
 
@@ -18,6 +18,11 @@ One of the ways you can increase your search engine ranking is by increasing the
 
 This plugin is intended to increase the time a user spends on your page by assisting publishers in HTML markup.
 
+**Options**
+ - Add rel="external nofollow" to external links
+ - Open external links in comments in a new tab
+ - Open external links in excerpts in a new tab
+ 
 **How does it work?**
 
 The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes. 
@@ -32,7 +37,7 @@ Additional options are available in the options page.
 
 1. Upload the folder `wp-links` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit the `WP Links Options` page under settings and add the necessary information.
+1. Visit the `WP Links Options` page under settings and adjust advanced settings.
 
 == Changelog ==
 

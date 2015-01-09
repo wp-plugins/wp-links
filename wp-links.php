@@ -78,15 +78,14 @@ function WPLINKS_settings_page() { ?>
                             <h3 class="hndle"><span>About WP Links </span></h3>
                             <div class="gdsrclear"></div>
                                 <div class="inside">
-                                      <p>WP Links was created to improve the length of time a visitor spends on your webpage.</p>
+                                      <p>Out of the box <strong><a href="https://wordpress.org/plugins/wp-links/" target="_blank">WP Links</a></strong> will open all external links in a new tab. This plugin was created to improve the length of time a visitor spends on your webpage by not allowing them to leave your site once they click on an external link.</p>
+                                      <h4>How it works?</h4>
                                       <p>This plugin will scan your posts/pages for any external links and force them to open in a new tab.</p>
-                                      <p>Developed and maintained by <a href="http://www.thebutton.com" target="_blank">Jorge A. Gonzalez</a> & <a href="http://www.jacobking.com" target="_blank">Jacob King</a>.</p>
                                       
-                                      <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="false">Follow @TheRealJAG</a>
-                                      <a href="https://twitter.com/IMJacobKing" class="twitter-follow-button" data-show-count="false">Follow @IMJacobKing</a>
+                                      <h4>Support the developer</h4>
+                                      <p>WP Links is developed and maintained by <a href="https://twitter.com/TheRealJAG" target="_blank" title="@TheRealJAG">Jorge A. Gonzalez</a></p>
+                                      <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="true">Follow @TheRealJAG</a>
                                       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Just installed WP Links on my #WordPress site." data-via="TheRealJAG" data-related="TheRealJAG">Tweet</a> 
-                                      <p><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')">
-                                      <input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></p>  
                                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                                 </div>
                         </div>
@@ -107,26 +106,21 @@ function WPLINKS_settings_page() { ?>
                                             ?>
                                             <table class="form-table">  
                                                 <tr>
-                                                <td valign="top"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
-                                                <td width="100%" /><strong>Add rel="external nofollow"</strong><br />Checking this box will add <a href="http://en.wikipedia.org/wiki/Nofollow" target="_blank">rel="external nofollow"</a> to external links found in your posts/pages.</td>
+                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
+                                                <td width="100%" /><strong>Add rel="external nofollow" to external links?</strong><br />Nofollow is a co-ordinated effort from Google, yahoo , MSN to stop crawling links that are considered not trustworthy or spammy. If you want to rank better in search engines, check this box.</td>
                                                 </tr>   
                                                 <tr>
-                                                <td  colspan="2" /></td>
-                                                </tr>   
-                                                <tr>
-                                                <td valign="top"><input type="checkbox" name="WPLINKS-comments" <?=$checked2;?>/> </td>
-                                                <td nowrap /><strong>Add target="_blank" to Comments?</strong><br />Checking this box will add target="_blank" to external links in comments.</td>
+                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-comments" <?=$checked2;?>/> </td>
+                                                <td nowrap /><strong>Add target="_blank" to comments?</strong><br />Checking this box will open a new tab for external links in comments.</td>
                                                 </tr>     
                                                 <tr>
-                                                <td valign="top"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
-                                                <td nowrap /><strong>Add target="_blank" Excerpts?</strong><br />Checking this box will add target="_blank"  to external links in excerpts.</td>
+                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
+                                                <td nowrap /><strong>Add target="_blank" excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
                                                 </tr>     
                                                 <tr>
-                                                <td  colspan="2" /><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>
-                                                </tr>     
-                                                <tr>
-                                                <td  colspan="2" /><h1>Share WP Links</h1><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Just installed WP Links on my #WordPress site." data-via="TheRealJAG" data-related="TheRealJAG" data-size="large">Tweet</a></td>
-                                                </tr>  
+                                                <td><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>
+                                                <td><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></td>
+                                                </tr> 
                                             </table>
                                             
                                             
