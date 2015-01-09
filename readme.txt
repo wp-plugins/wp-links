@@ -1,6 +1,6 @@
 === WP Links ===
 Contributors: nasium
-Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, posts, page, custom post type, comments, google, url
+Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, posts, page, custom post type, comments, google, url, plugin, article, blog, search engine optimization
 Requires at least: 3.0
 Tested up to: 4.1
 Stable tag: 1.5
@@ -16,12 +16,12 @@ WP Links is a SEO friendly external link handler to improve your on page SEO and
 
 One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website. 
 
-**Options**
+=Options=
 1. Add rel="external nofollow" to external links
 2. Open external links in comments in a new tab
 3. Open external links in excerpts in a new tab
  
-**How does it work?**
+=How does it work?=
 
 The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes. 
 
@@ -34,10 +34,13 @@ Additional options are available in the options page.
 == Installation ==
 
 1. Upload the folder `wp-links` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit the `WP Links Options` page under settings and adjust advanced settings.
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Visit the `WP Links Options` page under settings and adjust advanced settings.
 
 == Changelog ==
+
+= 1.5 =
+Core update
 
 = 1.4 =
 Fix blank space error.
