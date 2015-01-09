@@ -2,9 +2,9 @@
 Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, posts, page, custom post type, comments, google, url
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 1.4
-Author URI: http://www.foxybay.com
+Tested up to: 4.1
+Stable tag: 1.5
+Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
