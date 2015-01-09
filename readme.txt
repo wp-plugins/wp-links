@@ -14,7 +14,9 @@ SEO friendly plugin that forces external links to open in a new tab increasing v
 
 WP Links is a SEO friendly, external link handler to improve your on page SEO and increase the time a user spends on your website/blog. One of the ways you can increase your search engine ranking is by increasing the time a user spends browsing your website. 
 
-WP Links also offers the ability to add rel="external nofollow" to all external links. Adding this html attribute to a link effectively stops a link becoming a vote for another page, as far as Google and some other search engines are concerned. As your site grows some links become stale and could hurt your search engine rankings. Using the html attribute on an external (outbound) link tells Google you don't vouch for this other web page enough to help it's search rankings. 
+WP Links also offers the ability to add rel="external nofollow" to all external links. Adding this html attribute to a link effectively stops a link becoming a vote for another page, as far as Google and some other search engines are concerned. As your site grows some links become stale and could hurt your search engine rankings. Using the html attribute on an external (outbound) link tells Google you don't vouch for this other web page enough to help it's search rankings.
+
+Want to see WP Links in action? Visit <a href="http://watchworthy.com/derrick-coleman-duracell/" target="_blank">Watch Worthy</a>
 
 = Options =
 1. Add rel="external nofollow" to external links
