@@ -26,9 +26,7 @@ Want to see WP Links in action? Visit <a href="http://watchworthy.com/underwater
  
 = How does it work? =
 
-The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes. 
-
-Additional options are available in the options page. 
+The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes.  
  
  == Screenshots ==
 
