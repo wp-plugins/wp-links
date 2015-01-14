@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.5
+Stable tag: 1.6
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,9 @@ Additional options are available in the options page.
 3. Visit the `WP Links Options` page under settings and adjust advanced settings.
 
 == Changelog ==
+
+= 1.5 =
+Added the ability to display an icon next to external link. 
 
 = 1.5 =
 Core update
