@@ -22,6 +22,7 @@ Want to see WP Links in action? Visit <a href="http://watchworthy.com/underwater
 1. Add rel="external nofollow" to external links
 2. Open external links in comments in a new tab
 3. Open external links in excerpts in a new tab
+4. Add icon next to link. 100 different icons to choose from!
  
 = How does it work? =
 
@@ -42,7 +43,7 @@ Additional options are available in the options page.
 == Changelog ==
 
 = 1.5 =
-Added the ability to display an icon next to external link. 
+Added the ability to display an icon next to external links. 
 
 = 1.5 =
 Core update
