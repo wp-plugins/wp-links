@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.6
+Stable tag: 1.7
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,11 +40,14 @@ The plugin parses links on your post/page/comments/excerpts before it gets writt
 
 == Changelog ==
 
-= 1.5 =
+= 1.7 =
+Control how external links open and minor code tweaks.
+
+= 1.6 =
 Added the ability to display an icon next to external links. 
 
 = 1.5 =
-Core update
+Wordpress core updates.
 
 = 1.4 =
 Fix blank space error.

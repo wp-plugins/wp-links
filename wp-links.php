@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: Automatically opens a new tab for external links and allows you to set rel="external nofollow" to external links.
-Version: 1.6
+Version: 1.7
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
 License: GPL2
@@ -51,11 +51,13 @@ if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_co
         add_option("WPLINKS-nofollow", ""); 
         add_option("WPLINKS-comments", ""); 
         add_option("WPLINKS-excerpt", ""); 
+        add_option("WPLINKS-open", ""); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-title' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-image' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-nofollow' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-comments' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-excerpt' ); 
+    	register_setting( 'WPLINKS-settings', 'WPLINKS-open' ); 
     }
 
 /**
@@ -73,21 +75,29 @@ if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_co
  * WPLINKS_parse_matches($matches)
  * Returns the link 
  */
-    function WPLINKS_parse_matches($matches){ 
+    function WPLINKS_parse_matches($matches){  
+        // Original URL -> $matches[0];
+        
+        $host = $_SERVER["HTTP_HOST"];
         
         if (get_option("WPLINKS-image")) $wplinks_image = ' <img src="'.plugin_dir_url( __FILE__ ).'icons/'.get_option("WPLINKS-image").'">';  
         if (get_option("WPLINKS-title")) $wplinks_title = ' title="' . $matches[5] . '"';    
-    
+        
+        if (get_option("WPLINKS-open")) $wplinks_open = ' target="' . get_option("WPLINKS-open") . '"';   
+        else  $wplinks_open = ' target="_blank"'; 
+               
+        $url = $matches[2].'//'.$matches[3];
      
-    	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external($_SERVER["HTTP_HOST"]) ) {
-    		if (get_option("WPLINKS-nofollow")) return '<a href="' . $matches[2] . '//' . $matches[3] . '" ' . $matches[1] . $matches[4] . ' target="_blank" rel="external nofollow" '.$wplinks_title.'>' . $matches[5] . '</a>'.$wplinks_image;	 
-            else return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' target="_blank" '.$wplinks_title.'>' . $matches[5] . '</a>'.$wplinks_image;	 
-    	} else {
-    		return '<a href="' . $matches[2] . '//' . $matches[3] . '"' . $matches[1] . $matches[4] . ' '.$wplinks_title.'>' . $matches[5] . '</a>';
-    	}
+        /**
+        * Build the link
+        */
         
-        
-        
+        	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external($host) ) {
+        		if (get_option("WPLINKS-nofollow")) return '<a href="'.$url.'" '.$wplinks_open.' rel="external nofollow" '.$wplinks_title.'>' . $matches[5] . '</a>'.$wplinks_image;	 
+                else return '<a href="'.$url.'" '.$wplinks_open.' '.$wplinks_title.'>' . $matches[5] . '</a>'.$wplinks_image;	 
+        	} else {
+        		return '<a href="'.$url.'" '.$wplinks_title.'>' . $matches[5] . '</a>';
+        	} 
         
     }
  
@@ -134,32 +144,38 @@ function WPLINKS_settings_page() { ?>
                             <h3 class="hndle"><span>Link Options</span></h3>
                             <div class="gdsrclear"></div>
                                 <div class="inside">
-                                      
-                                                                  
-    
                                             <?php
                                             settings_fields('WPLINKS-settings'); 
                                             if( get_option("WPLINKS-nofollow") ){ $checked1 = "checked=\"checked\""; }  else { $checked1 = ""; }   
                                             if( get_option("WPLINKS-comments") ){ $checked2 = "checked=\"checked\""; }  else { $checked2 = ""; }   
                                             if( get_option("WPLINKS-excerpt") ){ $checked3 = "checked=\"checked\""; }  else { $checked3 = ""; }   
-                                            if( get_option("WPLINKS-title") ){ $checked4 = "checked=\"checked\""; }  else { $checked4 = ""; }   
+                                            if( get_option("WPLINKS-title") ){ $checked4 = "checked=\"checked\""; }  else { $checked4 = ""; }  
                                             ?>
                                             <table class="form-table">  
                                                 <tr>
+                                                <td valign="top" colspan="2"><strong>Open External Links In</strong>: &nbsp;&nbsp; 
+                                                    <select name="WPLINKS-open">
+                                                      <option value="_blank" <? if( get_option("WPLINKS-open") == '_blank') echo ' selected ';?>>New Tab</option>
+                                                      <option value="_self" <? if( get_option("WPLINKS-open") == '_self') echo ' selected ';?>>Same Tab</option>
+                                                    </select> 
+                                                </td> 
+                                                <tr><td colspan="2"><hr /></td></tr>
+                                                </tr>   
+                                                <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
-                                                <td width="100%" /><strong>Add rel="external nofollow" to external links?</strong><br />Nofollow is a co-ordinated effort from Google, Yahoo, MSN to stop crawling links that are considered not trustworthy or spammy. If you want to rank better in search engines, check this box.</td>
+                                                <td width="100%" /><strong>Add <code>rel="external nofollow"</code> to external links?</strong><br />Nofollow is a co-ordinated effort from Google, Yahoo, MSN to stop crawling links that are considered not trustworthy or spammy. If you want to rank better in search engines, check this box.</td>
                                                 </tr>   
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-comments" <?=$checked2;?>/> </td>
-                                                <td nowrap /><strong>Add target="_blank" to comments?</strong><br />Checking this box will open a new tab for external links in comments.</td>
+                                                <td nowrap /><strong>Add <code>target="_blank"</code> to comments?</strong><br />Checking this box will open a new tab for external links in comments.</td>
                                                 </tr>     
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
-                                                <td nowrap /><strong>Add target="_blank" excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
+                                                <td nowrap /><strong>Add <code>target="_blank"</code> excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
                                                 </tr>     
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-title" <?=$checked4;?>/> </td>
-                                                <td nowrap /><strong>Add title attribute to links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.</td>
+                                                <td nowrap /><strong>Add <code>title</code> attribute to links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.</td>
                                                 </tr>     
                                                 <tr>
                                                 <td><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>
@@ -346,12 +362,6 @@ function WPLINKS_settings_page() { ?>
                                                 <td colspan="2"><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></td>
                                                 </tr> 
                                             </table>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                      
                                       
                             </div>
                         </div>
