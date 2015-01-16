@@ -17,7 +17,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
-Description: Automatically opens a new tab for external links and allows you to set rel="external nofollow" to external links.
+Description: External link handler for Wordpress
 Version: 1.7
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
