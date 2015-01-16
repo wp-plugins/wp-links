@@ -24,11 +24,7 @@ Want to see WP Links in action? Visit <a href="http://watchworthy.com/underwater
 3. Open external links in comments in a new tab
 4. Open external links in excerpts in a new tab
 5. Add icon next to link. 100 icons to choose from
- 
-= How does it work? =
-
-The plugin parses links on your post/page/comments/excerpts before it gets written to the screen and adds target="_blank" to the HTML anchor tag. WP Links will preserve title="" and all other anchor tag attributes.  
- 
+  
  == Screenshots ==
 
 1. Options Page
