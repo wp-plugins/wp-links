@@ -21,9 +21,9 @@ Want to see WP Links in action? Visit <a href="http://watchworthy.com/underwater
 = Options =
 1. Choose how to open external links; new tab or same tab
 2. Ability to add rel="external nofollow" to external links
-3. Open external links in comments in a new tab
-4. Open external links in excerpts in a new tab
-5. Add icon next to link. 100 icons to choose from
+3. Add icon next to link. 100 icons to choose from
+4. Open external links in comments in a new tab
+5. Open external links in excerpts in a new tab
   
  == Screenshots ==
 
