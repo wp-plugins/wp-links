@@ -8,7 +8,7 @@ Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SEO friendly plugin that forces external links to open in a new tab increasing visit length and potentially increasing your search engine ranking.
+External link handler for Wordpress
 
 == Description ==
 
