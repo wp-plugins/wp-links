@@ -19,10 +19,11 @@ WP Links also offers the ability to add rel="external nofollow" to all external 
 Want to see WP Links in action? Visit <a href="http://watchworthy.com/underwater-base-jumping/" target="_blank">Watch Worthy</a>
 
 = Options =
-1. Add rel="external nofollow" to external links
-2. Open external links in comments in a new tab
-3. Open external links in excerpts in a new tab
-4. Add icon next to link. 100 different icons to choose from!
+1. Choose how to open external links; new tab or same tab
+2. Ability to add rel="external nofollow" to external links
+3. Open external links in comments in a new tab
+4. Open external links in excerpts in a new tab
+5. Add icon next to link. 100 icons to choose from
  
 = How does it work? =
 
