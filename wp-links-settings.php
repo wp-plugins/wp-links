@@ -14,15 +14,10 @@ function WPLINKS_settings_page() { ?>
                             <h3 class="hndle"><span>About WP Links </span></h3>
                             <div class="gdsrclear"></div>
                                 <div class="inside">
-                                      <p>Out of the box <strong>WP Links</strong> will open all external links in a new tab. This plugin was created to improve the length of time a visitor spends on your webpage by not allowing them to leave your site once they click on an external link.</p>
-                                      <h4>How it works?</h4>
-                                      <p>This plugin will scan your posts/pages for any external links and force them to open in a new tab.</p>
-                                      
-                                      <h4>Support the developer</h4>
-                                      <p>WP Links is developed and maintained by <a href="https://twitter.com/TheRealJAG" target="_blank" title="@TheRealJAG">Jorge A. Gonzalez</a></p>
-                                      <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="true">Follow @TheRealJAG</a>
-                                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Just installed WP Links on my #WordPress site." data-via="TheRealJAG" data-related="TheRealJAG">Tweet</a> 
-                                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                      <p><strong><a href="https://wordpress.org/plugins/wp-links/" target="_blank">WP Links</a></strong> is developed and maintained by <a href="https://www.linkedin.com/in/jorgeagonzalez" target="_blank" title="Jorge A. Gonzalez">Jorge A. Gonzalez</a> <a href="https://twitter.com/TheRealJAG" target="_blank" title="@TheRealJAG">@TheRealJAG</a></p>
+                                      <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="false">Follow @TheRealJAG</a>
+                                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Check out WP Links for your #WordPress blog" data-related="TheRealJAG" data-count="none">Tweet</a>
+                                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                                 </div>
                         </div>
                     </div> 
