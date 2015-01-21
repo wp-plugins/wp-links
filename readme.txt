@@ -8,7 +8,7 @@ Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Take control of your external links in WordPress with WP Links
+Take control of your external links in WordPress
 
 == Description ==
 
