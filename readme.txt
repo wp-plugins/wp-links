@@ -18,11 +18,11 @@ The current aim of WP Links is to standardize the format of external links and c
 
 ### Features
 * Open external links in a new tab or new window
+* Show icon next to external link (100 icons to chose from) 
 * Add rel="external nofollow" to external links
 * Add title attribute to external links (uses to the text of the link)
 * Add target="_blank" to comment links (rel="external nofollow" coming soon) 
 * Add target="_blank" to external links in excerpts
-* Show icon next to link (100 icons to chose from) 
 
 ### Demo
 * <a href="http://watchworthy.com/underwater-base-jumping/" target="_blank">Watch Worthy</a>
