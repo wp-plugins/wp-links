@@ -16,7 +16,7 @@ WP Links is a SEO friendly, Wordpress external link handler to improve your on p
 
 WP Links also offers the ability to add rel="external nofollow" to all external links. Adding this html attribute to a link effectively stops a link becoming a vote for another page, as far as Google and some other search engines are concerned. As your site grows some links become stale and could hurt your search engine rankings. Using the html attribute on an external (outbound) link tells Google you don't vouch for this other web page enough to help it's search rankings.
 
-### Demo:
+### Demo
 * <a href="http://watchworthy.com/underwater-base-jumping/" target="_blank">Watch Worthy</a>
 
 = Options =
