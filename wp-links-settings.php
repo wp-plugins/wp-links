@@ -16,7 +16,7 @@ function WPLINKS_settings_page() { ?>
                                 <div class="inside">
                                       <p><strong><a href="https://wordpress.org/plugins/wp-links/" target="_blank">WP Links</a></strong> is developed and maintained by <a href="https://www.linkedin.com/in/jorgeagonzalez" target="_blank" title="Jorge A. Gonzalez">Jorge A. Gonzalez</a> <a href="https://twitter.com/TheRealJAG" target="_blank" title="@TheRealJAG">@TheRealJAG</a></p>
                                       <a href="https://twitter.com/TheRealJAG" class="twitter-follow-button" data-show-count="false">Follow @TheRealJAG</a>
-                                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Check out WP Links for your #WordPress blog" data-related="TheRealJAG" data-count="none">Tweet</a>
+                                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wordpress.org/extend/plugins/wp-links/" data-text="Take control of your external links in #WordPress with WP Links" data-related="TheRealJAG" data-count="none">Tweet</a>
                                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                                 </div>
                         </div>
