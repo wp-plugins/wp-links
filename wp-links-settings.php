@@ -3,11 +3,19 @@
  * WPLINKS_settings_page()
  * The settings page for the plugin
  */
-function WPLINKS_settings_page() { ?>
+function WPLINKS_settings_page() { 
+   
+    $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'external_links';
+?>
     <div class="wrap">
         <div id="icon-link-manager" class="icon32"></div> 
-        <h2>WP Links Options</h2>  
+        <h2>WP Links Settings</h2>   
         
+        <!-- <h2 class="nav-tab-wrapper">
+            <a href="options-general.php?page=WPLINKS_menu&tab=external_links" class="nav-tab <?php echo $active_tab == 'external_links' ? 'nav-tab-active' : ''; ?>">External Links</a> 
+            <a href="options-general.php?page=WPLINKS_menu&tab=about" class="nav-tab <?php echo $active_tab == 'about' ? 'nav-tab-active' : ''; ?>">About</a>
+        </h2>-->
+          
          <form method="post" action="options.php"> 
                     <div class="metabox-holder"> 
                         <div class="postbox gdrgrid frontleft"> 
@@ -43,7 +51,11 @@ function WPLINKS_settings_page() { ?>
                                                     </select> 
                                                 </td> 
                                                 <tr><td colspan="2"><hr /></td></tr>
-                                                </tr>   
+                                                </tr>    
+                                                <tr>
+                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-title" <?=$checked4;?>/> </td>
+                                                <td nowrap /><strong>Add <code>title</code> attribute to external links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.</td>
+                                                </tr>    
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
                                                 <td width="100%" /><strong>Add <code>rel="external nofollow"</code> to external links?</strong><br />Nofollow is an effort from Google, Yahoo, MSN to stop crawling links that are considered not trustworthy or spammy. If you want to rank better in search engines, check this box.</td>
@@ -55,10 +67,6 @@ function WPLINKS_settings_page() { ?>
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
                                                 <td nowrap /><strong>Add <code>target="_blank"</code> excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
-                                                </tr>     
-                                                <tr>
-                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-title" <?=$checked4;?>/> </td>
-                                                <td nowrap /><strong>Add <code>title</code> attribute to links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.</td>
                                                 </tr>     
                                                 <tr>
                                                 <td><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>

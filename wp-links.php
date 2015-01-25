@@ -18,19 +18,27 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: External link handler for Wordpress
-Version: 1.8
+Version: 1.9
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
 License: GPL2
 */
 
-define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
+define('PLUGIN_DIR', plugin_dir_path( __FILE__ ));
+define('PLUGIN_URL', plugin_dir_url( __FILE__ ));
+define('HTTP_HOST', $_SERVER["HTTP_HOST"] ); 
+define('WPLINKS_EXCERPT', get_option("WPLINKS-excerpt") );  
+define('WPLINKS_COMMENTS', get_option("WPLINKS-comments") );  
+define('WPLINKS_IMAGE', get_option("WPLINKS-image") );  
+define('WPLINKS_TITLE', get_option("WPLINKS-title") );  
+define('WPLINKS_OPEN', get_option("WPLINKS-open") );  
+define('WPLINKS_NOFOLLOW', get_option("WPLINKS-nofollow") );  
 
 include_once(PLUGIN_DIR.'wp-links-settings.php');
 
 add_filter('the_content', 'WPLINKS_parse_copy', 9);
-if( get_option("WPLINKS-excerpt") ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 9);
-if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
+if( WPLINKS_EXCERPT ) add_filter('the_excerpt', 'WPLINKS_parse_copy', 9);
+if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
 
 /**
  * WPLINKS_create_menu()
@@ -77,28 +85,32 @@ if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_co
  * WPLINKS_parse_matches($matches)
  * Returns the link 
  */
-    function WPLINKS_parse_matches($matches){         
-        $host = $_SERVER["HTTP_HOST"];
+    function WPLINKS_parse_matches($matches){  
         
-        if (get_option("WPLINKS-image")) {
+        if (WPLINKS_IMAGE) {
             $style = ' class="wp-links-icon"';
             add_action('wp_head','WPLINKS_add_css');
         } 
                 
-        if (get_option("WPLINKS-title")) $wplinks_title = ' title="' . $matches[5] . '"';    
+        if (WPLINKS_TITLE && WPLINKS_is_image($matches[5]) == false) $wplinks_title = ' title="' . $matches[5] . '"';    
         
-        if (get_option("WPLINKS-open")) $wplinks_open = ' target="' . get_option("WPLINKS-open") . '"';   
+        if (WPLINKS_OPEN) $wplinks_open = ' target="' . WPLINKS_OPEN . '"';   
         else  $wplinks_open = ' target="_blank"'; 
                
         $url = $matches[2].'//'.$matches[3];
      
         /**
         * Build the link
+        * Should not add external link to icon
         */
         
-        	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external($host) ) {
-        		if (get_option("WPLINKS-nofollow")) return '<a href="'.$url.'" '.$wplinks_open.' rel="external nofollow" '.$wplinks_title.' '.$style.'>' . $matches[5] . '</a>'.$wplinks_image;	 
-                else return '<a href="'.$url.'" '.$wplinks_open.' '.$wplinks_title.' '.$style.'>' . $matches[5] . '</a>'.$wplinks_image;	 
+        	if ( WPLINKS_is_external($matches[3]) != WPLINKS_is_external(HTTP_HOST) ) {
+        	   if (WPLINKS_is_image($matches[5])) $style = '';
+        	   
+        		if (WPLINKS_NOFOLLOW) return '<a href="'.$url.'" '.$wplinks_open.' rel="external nofollow" '.$wplinks_title.' '.$style.'>' . $matches[5] . '</a>'.$wplinks_image;	 
+                else return '<a href="'.$url.'" '.$wplinks_open.' '.$wplinks_title.' '.$style.'>' . $matches[5] . '</a>'.$wplinks_image;	
+                
+                
         	} else {
         		return '<a href="'.$url.'" '.$wplinks_title.'>' . $matches[5] . '</a>';
         	} 
@@ -114,6 +126,16 @@ if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_co
     	$text = preg_replace_callback($pattern,'WPLINKS_parse_matches',$text);	 
     	return $text;
     }
+ 
+ /**
+  * WPLINKS_is_image($text)
+  * Is there an image in the $text
+  */
+    function WPLINKS_is_image($text) {	
+    	preg_match('#(<img.*?>)#', $text, $results);
+        if ($results[1]) return true;
+         else return false;
+    }
   
 /**
 * WPLINKS_add_css()
@@ -122,6 +144,6 @@ if( get_option("WPLINKS-comments") )add_filter('comment_text', 'WPLINKS_parse_co
 function WPLINKS_add_css() { ?>
 </style><style type="text/css" media="screen">
 /* WP Links Plugin */
-    .wp-links-icon { background:url("<?=plugin_dir_url( __FILE__ );?>icons/<?=get_option("WPLINKS-image");?>") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};
+    .wp-links-icon { background:url("<?=PLUGIN_URL;?>icons/<?=WPLINKS_IMAGE;?>") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};
 </style>
 <?php } ?>

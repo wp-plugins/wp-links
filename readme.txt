@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization,external link,external-links,link-target
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.8
+Stable tag: 1.9
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ The current aim of WP Links is to standardize the format of external links and c
 3. Visit the `WP Links Options` page under settings and adjust advanced settings.
 
 == Changelog ==
+
+= 1.9 =
+img fix and performance improvements
+multi site fix
 
 = 1.8 =
 Bug fixes - moved add_filter priority to 9
