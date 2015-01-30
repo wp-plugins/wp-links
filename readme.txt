@@ -14,9 +14,9 @@ Take control of external links in WordPress posts, pages & comments.
 
 WP Links is a SEO friendly, Wordpress external link handler. 
 
-The current aim of WP Links is to standardize the format of external links and create consistent on-page SEO. 
+The current aim of WP Links is to standardize the format of external links and create consistent on-page SEO.  
 
-<a href="http://watchworthy.com/underwater-base-jumping/" target="_blank">Demo</a> | <a href="https://s.w.org/plugins/wp-links/screenshot-1.png?r=1072309">Options</a>
+<a href="http://watchworthy.com/underwater-base-jumping/" target="_blank">Demo</a> | <a href="https://s.w.org/plugins/wp-links/screenshot-1.png">Options</a>
 
 ### Features
 * Open external links in a new tab or new window
