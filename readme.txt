@@ -21,6 +21,7 @@ The current aim of WP Links is to standardize the format of external links and c
 ### Features
 * Open external links in a new tab or new window
 * Show icon next to external link (100 icons to chose from) 
+* External image hosting support
 * Add rel="external nofollow" to external links
 * Add title attribute to external links (uses to the text of the link)
 * Add target="_blank" to comment links (rel="external nofollow" coming soon) 
@@ -38,6 +39,9 @@ The current aim of WP Links is to standardize the format of external links and c
 3. Visit the `WP Links Options` page under settings and adjust advanced settings.
 
 == Changelog ==
+
+= 1.9.1 =
+Added support for external image hosting. Assists in domain mapping and multi support
 
 = 1.9 =
 img fix and performance improvements
