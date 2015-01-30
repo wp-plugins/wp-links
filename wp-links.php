@@ -157,6 +157,5 @@ function WPLINKS_add_css() {
         echo '.wp-links-icon { background:url("'.WPLINKS_IMAGE_PATH.'") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};';
     }
 ?>
-    
 </style>
 <?php } ?> 
