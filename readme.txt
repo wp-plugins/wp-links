@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization,external link,external-links,link-target
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.9.2
+Stable tag: 1.9.4
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,8 +40,12 @@ The current aim of WP Links is to standardize the format of external links and c
 
 == Changelog ==
 
-= 1.9.1 =
-Style bug
+= 1.9.3 =
+Added custom structure to link title, found in options under 'Link Options' when 'Add title attribute to external links' is selected.
+Bug fixes
+
+= 1.9.2 =
+Bug fixes 
 
 = 1.9.1 =
 Added support for external image hosting. Assists in domain mapping and multi support

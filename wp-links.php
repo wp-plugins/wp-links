@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: External link handler for Wordpress
-Version: 1.9.2
+Version: 1.9.3
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
 License: GPL2
@@ -33,6 +33,7 @@ define('WPLINKS_COMMENTS', get_option("WPLINKS-comments") );
 define('WPLINKS_IMAGE', get_option("WPLINKS-image") ); 
 define('WPLINKS_IMAGE_PATH', plugins_url( 'icons/'.WPLINKS_IMAGE, __FILE__ ) );  
 define('WPLINKS_TITLE', get_option("WPLINKS-title") );  
+define('WPLINKS_TITLE_SHORTCODE', get_option("WPLINKS-title-shortcode") );
 define('WPLINKS_OPEN', get_option("WPLINKS-open") );  
 define('WPLINKS_NOFOLLOW', get_option("WPLINKS-nofollow") );  
 define('WPLINKS_EXTERNAL_IMAGE', get_option("WPLINKS-external-image") );   
@@ -60,6 +61,7 @@ if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
  */
     function WPLINKS_register() { 
         add_option("WPLINKS-title", ""); 
+        add_option("WPLINKS-title-shortcode", "%TITLE%"); 
         add_option("WPLINKS-image", ""); 
         add_option("WPLINKS-nofollow", ""); 
         add_option("WPLINKS-comments", ""); 
@@ -67,6 +69,7 @@ if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
         add_option("WPLINKS-open", ""); 
         add_option("WPLINKS-external-image", ""); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-title' ); 
+    	register_setting( 'WPLINKS-settings', 'WPLINKS-title-shortcode' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-image' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-nofollow' ); 
     	register_setting( 'WPLINKS-settings', 'WPLINKS-comments' ); 
@@ -93,11 +96,13 @@ if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
     function WPLINKS_parse_matches($matches){  
         
         if (WPLINKS_IMAGE) {
+            add_action('wp_head','WPLINKS_add_css');
             $style = ' class="wp-links-icon"';
-            add_action('wp_head','WPLINKS_add_css',15);
         } 
                 
-        if (WPLINKS_TITLE && WPLINKS_is_image($matches[5]) == false) $wplinks_title = ' title="' . $matches[5] . '"';    
+        if (WPLINKS_TITLE && WPLINKS_is_image($matches[5]) == false) { 
+            $wplinks_title = ' title="' . str_replace("%TITLE%",$matches[5],WPLINKS_TITLE_SHORTCODE) . '"';    
+        }
         
         if (WPLINKS_OPEN) $wplinks_open = ' target="' . WPLINKS_OPEN . '"';   
         else  $wplinks_open = ' target="_blank"'; 
@@ -147,15 +152,11 @@ if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
 * Add css to the head if required
 */  
 function WPLINKS_add_css() { 
-?>
-<style type="text/css" media="screen">
-/* WP Links Plugin */
-<? 
+    echo "\r\n\n<!-- WP Links CSS-->";
     if (WPLINKS_EXTERNAL_IMAGE == 'on') { 
-        echo '.wp-links-icon { background:url("'.WPLINKS_get_external(WPLINKS_IMAGE).'") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};';
+        echo "\r\n<style type=\"text/css\">\r\n.wp-links-icon { background:url(\"".WPLINKS_get_external(WPLINKS_IMAGE)."\") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};\r\n</style>\r\n\n";
     } else { 
-        echo '.wp-links-icon { background:url("'.WPLINKS_IMAGE_PATH.'") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};';
+        echo "\r\n<style type=\"text/css\">\r\n.wp-links-icon { background:url(\"".WPLINKS_IMAGE_PATH."\") no-repeat 100% 50%; padding-right:15px; margin-right: 2px;};\r\n</style>\r\n\n";
     }
+} 
 ?>
-</style>
-<?php } ?>

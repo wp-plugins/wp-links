@@ -4,19 +4,26 @@
  * The settings page for the plugin
  */
 function WPLINKS_settings_page() { 
-   
-    $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'external_links';
 ?>
+<script> 
+    jQuery(document).ready(function($) {         
+        $('#WPLINKS-title-shortcode-wrapper')[$('#WPLINKS-title').is(':checked') ? "show" : "hide"]();        
+        $('#WPLINKS-title').live('change', function(){  $('#WPLINKS-title-shortcode-wrapper')[this.checked ? "show" : "hide"]();});
+    }); 
+</script>
+ 
     <div class="wrap">
         <div id="icon-link-manager" class="icon32"></div> 
-        <h2>WP Links Settings</h2>   
-        
-        <!-- <h2 class="nav-tab-wrapper">
-            <a href="options-general.php?page=WPLINKS_menu&tab=external_links" class="nav-tab <?php echo $active_tab == 'external_links' ? 'nav-tab-active' : ''; ?>">External Links</a> 
-            <a href="options-general.php?page=WPLINKS_menu&tab=about" class="nav-tab <?php echo $active_tab == 'about' ? 'nav-tab-active' : ''; ?>">About</a>
-        </h2>-->
-          
+        <h2>WP Links Settings</h2>           
          <form method="post" action="options.php"> 
+                     <?
+                         settings_fields('WPLINKS-settings'); 
+                        if( get_option("WPLINKS-nofollow") ){ $checked1 = "checked=\"checked\""; }  else { $checked1 = ""; }   
+                        if( get_option("WPLINKS-comments") ){ $checked2 = "checked=\"checked\""; }  else { $checked2 = ""; }   
+                        if( get_option("WPLINKS-excerpt") ){ $checked3 = "checked=\"checked\""; }  else { $checked3 = ""; }   
+                        if( get_option("WPLINKS-title") ){ $checked4 = "checked=\"checked\""; }  else { $checked4 = ""; }  
+                        if( get_option("WPLINKS-external-image") ){ $checked5 = "checked=\"checked\""; }  else { $checked5 = ""; }   
+                    ?>
                     <div class="metabox-holder"> 
                         <div class="postbox gdrgrid frontleft"> 
                             <h3 class="hndle"><span>About WP Links </span></h3>
@@ -34,15 +41,7 @@ function WPLINKS_settings_page() {
                         <div class="postbox gdrgrid frontleft"> 
                             <h3 class="hndle"><span>Link Options</span></h3>
                             <div class="gdsrclear"></div>
-                                <div class="inside">
-                                            <?php
-                                            settings_fields('WPLINKS-settings'); 
-                                            if( get_option("WPLINKS-nofollow") ){ $checked1 = "checked=\"checked\""; }  else { $checked1 = ""; }   
-                                            if( get_option("WPLINKS-comments") ){ $checked2 = "checked=\"checked\""; }  else { $checked2 = ""; }   
-                                            if( get_option("WPLINKS-excerpt") ){ $checked3 = "checked=\"checked\""; }  else { $checked3 = ""; }   
-                                            if( get_option("WPLINKS-title") ){ $checked4 = "checked=\"checked\""; }  else { $checked4 = ""; }  
-                                            if( get_option("WPLINKS-external-image") ){ $checked5 = "checked=\"checked\""; }  else { $checked5 = ""; }  
-                                            ?>
+                                <div class="inside"> 
                                             <table class="form-table">  
                                                 <tr>
                                                 <td valign="top" colspan="2"><strong>Open External Links In</strong>: &nbsp;&nbsp; 
@@ -54,30 +53,26 @@ function WPLINKS_settings_page() {
                                                 <tr><td colspan="2"><hr /></td></tr>
                                                 </tr>    
                                                 <tr>
-                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-title" <?=$checked4;?>/> </td>
-                                                <td nowrap /><strong>Add <code>title</code> attribute to external links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.</td>
+                                                <td valign="top" align="center" width="50"><input type="checkbox" name="WPLINKS-title" id="WPLINKS-title" <?=$checked4;?>/> </td>
+                                                <td nowrap />
+                                                    <strong>Add <code>title</code> attribute to external links?</strong><br />Checking this box will add the text of the link to the title attribute of the link.
+                                                    <span id="WPLINKS-title-shortcode-wrapper" style="display:none"><br /><br /><strong>Custom Structure</strong> <input type="text" name="WPLINKS-title-shortcode" id="WPLINKS-title-shortcode" value="<?=WPLINKS_TITLE_SHORTCODE;?>" size="40" /><br />%TITLE% is shortcode for the title of the link</span>
+                                                </td>
                                                 </tr>    
                                                 <tr>
                                                 <td valign="top" align="center"><input type="checkbox" name="WPLINKS-nofollow" <?=$checked1;?>/> </td>
                                                 <td width="100%" /><strong>Add <code>rel="external nofollow"</code> to external links?</strong><br />Nofollow is an effort from Google, Yahoo, MSN to stop crawling links that are considered not trustworthy or spammy. If you want to rank better in search engines, check this box.</td>
-                                                </tr>   
-                                                <tr>
-                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-comments" <?=$checked2;?>/> </td>
-                                                <td nowrap /><strong>Add <code>target="_blank"</code> to comments?</strong><br />Checking this box will open a new tab for external links in comments.</td>
-                                                </tr>     
-                                                <tr>
-                                                <td valign="top" align="center"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
-                                                <td nowrap /><strong>Add <code>target="_blank"</code> excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
-                                                </tr>     
+                                                </tr>    
                                                 <tr>
                                                 <td><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>
-                                                <td><input type="button" class="button tagadd" value="Rate WP Links" tabindex="3" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></td>
+                                                <td><input type="button" class="button tagadd" value="Rate WP Links" onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></td>
                                                 </tr> 
                                             </table>
                     
                             </div>
                         </div>
-                    </div> 
+                    </div>  
+                    
                      
                     <div class="metabox-holder"> 
                         <div class="postbox gdrgrid frontleft"> 
@@ -259,6 +254,29 @@ function WPLINKS_settings_page() {
                     </div>  
                     
                     
+                    <div class="metabox-holder"> 
+                        <div class="postbox gdrgrid frontleft"> 
+                            <h3 class="hndle"><span>Other Options</span></h3>
+                            <div class="gdsrclear"></div>
+                                <div class="inside">  
+                                    <table class="form-table">
+                                        <tr>
+                                        <td valign="top" align="center" width="50"><input type="checkbox" name="WPLINKS-comments" <?=$checked2;?>/> </td>
+                                        <td nowrap /><strong>Add <code>target="_blank"</code> to comments?</strong><br />Checking this box will open a new tab for external links in comments.</td>
+                                        </tr>     
+                                        <tr>
+                                        <td valign="top" align="center"><input type="checkbox" name="WPLINKS-excerpt" <?=$checked3;?>/> </td>
+                                        <td nowrap /><strong>Add <code>target="_blank"</code> excerpts?</strong><br />Checking this box will open a new tab for external links in excerpts.</td>
+                                        </tr>     
+                                        <tr>
+                                        <td><input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" /></td>
+                                        <td><input type="button" class="button tagadd" value="Rate WP Links"onclick="window.open('http://wordpress.org/extend/plugins/wp-links/')"> &nbsp;&nbsp; &nbsp;<input type="button" class="button tagadd" value="Support Page" tabindex="3" onclick="window.open('http://wordpress.org/support/plugin/wp-links')"></td>
+                                        </tr> 
+                                    </table> 
+                                    
+                            </div>
+                        </div>
+                    </div>  
                     
  
 </form>                    
