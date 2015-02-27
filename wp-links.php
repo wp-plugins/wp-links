@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: External link handler for Wordpress
-Version: 1.9.3
+Version: 1.9.5
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
 License: GPL2
@@ -101,7 +101,8 @@ if( WPLINKS_COMMENTS )add_filter('comment_text', 'WPLINKS_parse_copy', 9);
         } 
                 
         if (WPLINKS_TITLE && WPLINKS_is_image($matches[5]) == false) { 
-            $wplinks_title = ' title="' . str_replace("%TITLE%",$matches[5],WPLINKS_TITLE_SHORTCODE) . '"';    
+            $sTitle = strip_tags($matches[5]);
+            $wplinks_title = ' title="' . str_replace("%TITLE%",$sTitle,WPLINKS_TITLE_SHORTCODE) . '"';    
         }
         
         if (WPLINKS_OPEN) $wplinks_open = ' target="' . WPLINKS_OPEN . '"';   

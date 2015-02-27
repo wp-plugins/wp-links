@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization,external link,external-links,link-target
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
