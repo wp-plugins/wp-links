@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 Plugin Name: WP Links
 Plugin URI: http://wordpress.org/extend/plugins/wp-links/
 Description: External link handler for Wordpress
-Version: 1.9.5
+Version: 1.9.6
 Author: Jorge A. Gonzalez
 Author URI: https://twitter.com/TheRealJAG
 License: GPL2
