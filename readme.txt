@@ -3,7 +3,7 @@ Contributors: nasium
 Tags: seo, external, links, new tab, new window, nofollow, rel, target, _blank, Post, posts, page, pages, custom post type, comments, google, url, plugin, article, blog, search engine optimization,external link,external-links,link-target
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.9.6
+Stable tag: 1.9.6.1
 Author URI: https://twitter.com/TheRealJAG
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Take control of external links in WordPress posts, pages & comments.
 
 == Description ==
 
-WP Links is a SEO friendly, Wordpress external link handler. 
+WP Links is a SEO friendly, external link handler for Wordpress. 
 
 The current aim of WP Links is to standardize the format of external links and create consistent on-page SEO.  
 
